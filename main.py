@@ -2,6 +2,7 @@ from __future__ import division
 from matplotlib import pyplot as plt
 import abc
 import math
+import constants
 
 
 class FunctionsGraph(object):
@@ -131,12 +132,10 @@ class PlottedPlanckFunction(PlottedFunction):
         # QUESTION: I'm not sure exactly what number of decimal places constants should be to.
         if not (isinstance(l, float) or isinstance(l, int)):
             raise TypeError("Must provide numerical input to PlottedPlanckFunction")
-        boltzmann_const = 1.38064852e-23   # J / K
-        planck_const = 6.63607004e-34      # J * s
-        light_speed = 299792458            # m / s
 
-        numerator = 2 * planck_const * (light_speed**2)
-        denominator = (l**5) * ((math.e**((planck_const * light_speed) / (l * boltzmann_const * self.temp))) - 1)
+        numerator = 2 * constants.planck_const * (constants.light_speed**2)
+        denominator = (l**5) * ((math.e**((constants.planck_const * constants.light_speed) /
+                                          (l * constants.boltzmann_const * self.temp))) - 1)
         return numerator / denominator
 
 
@@ -175,16 +174,12 @@ class Star(object):
         @type zero_mag_flux: float
         @param zero_mag_flux: Flux emitted of wavelength by a reference star with zero magnitude (Vega).
         """
-        # TODO: get data about vega
-        vega_surface_temp = 9602
-        vega_surface_area = 1
-        vega_distance = 1
         power_per_sq_meter = PlottedPlanckFunction(self.surface_temp)(wavelength)
         surface_area = 4 * math.pi * (self.radius**2)
         luminosity = power_per_sq_meter * surface_area
-        power_per_sq_meter = PlottedPlanckFunction(vega_surface_temp)(wavelength)
-        vega_luminosity = power_per_sq_meter * vega_surface_area
-        flux = zero_mag_flux * (luminosity / vega_luminosity) * ((self.dist / vega_distance)**2)
+        vega_power_per_sq_meter = PlottedPlanckFunction(constants.vega_surface_temp)(wavelength)
+        vega_luminosity = vega_power_per_sq_meter * constants.vega_surface_area
+        flux = zero_mag_flux * (luminosity / vega_luminosity) * ((self.dist / constants.vega_distance)**2)
         magnitude = -2.5 * math.log(flux / zero_mag_flux, 10)
         return magnitude
 

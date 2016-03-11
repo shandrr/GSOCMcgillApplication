@@ -1,4 +1,3 @@
-# QUESTION: I'm not sure exactly what number of decimal places constants should be to.
 boltzmann_const = 1.38064852e-23   # J / K
 planck_const = 6.63607004e-34      # J * s
 light_speed = 299792458            # m / s

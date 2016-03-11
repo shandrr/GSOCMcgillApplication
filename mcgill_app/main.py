@@ -18,7 +18,7 @@ def main():
                                    label=str(int(temp)) + "K")
     graph.plot(x_range=(0.1e-6, 6e-6), point_spacing=0.02e-6)
     # TODO: input required parameters
-    st = star.Star(1, 10, 4000)     # QUESTION: was unsure what temperature the star should be
+    st = star.Star(1, 10, 4000)
     print st.get_ubvr_magnitudes()
 
 

@@ -1,9 +1,9 @@
-boltzmann_const = 1.38064852e-23   # J / K
-planck_const = 6.63607004e-34      # J * s
-light_speed = 299792458            # m / s
-stefan_boltzmann_const = 5.67e-8   # J
+BOLTZMANN_CONST = 1.38064852e-23   # J / K
+PLANCK_CONST = 6.63607004e-34      # J * s
+LIGHT_SPEED = 299792458            # m / s
+STEFAN_BOLTZMANN_CONST = 5.67e-8   # J
 
 # TODO: get data about Vega
-vega_surface_temp = 9602    # K
-vega_surface_area = 1       # m^2
-vega_distance = 1           # pc
+VEGA_SURFACE_TEMP = 9602    # K
+VEGA_SURFACE_AREA = 1       # m^2
+VEGA_DISTANCE = 1           # pc

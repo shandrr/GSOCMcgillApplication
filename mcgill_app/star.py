@@ -42,9 +42,9 @@ class Star(object):
         power_per_sq_meter = graphs.PlottedPlanckFunction(self.surface_temp)(wavelength)
         surface_area = 4 * math.pi * (self.radius**2)
         luminosity = power_per_sq_meter * surface_area
-        vega_power_per_sq_meter = graphs.PlottedPlanckFunction(constants.vega_surface_temp)(wavelength)
-        vega_luminosity = vega_power_per_sq_meter * constants.vega_surface_area
-        flux = zero_mag_flux * (luminosity / vega_luminosity) * ((self.dist / constants.vega_distance)**2)
+        vega_power_per_sq_meter = graphs.PlottedPlanckFunction(constants.VEGA_SURFACE_TEMP)(wavelength)
+        vega_luminosity = vega_power_per_sq_meter * constants.VEGA_SURFACE_AREA
+        flux = zero_mag_flux * (luminosity / vega_luminosity) * ((self.dist / constants.VEGA_DISTANCE) ** 2)
         magnitude = -2.5 * math.log(flux / zero_mag_flux, 10)
         return magnitude
 

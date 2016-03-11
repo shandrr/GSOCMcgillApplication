@@ -132,7 +132,7 @@ class PlottedPlanckFunction(PlottedFunction):
         if not (isinstance(l, float) or isinstance(l, int)):
             raise TypeError("Must provide numerical input to PlottedPlanckFunction")
 
-        numerator = 2 * constants.planck_const * (constants.light_speed**2)
-        denominator = (l**5) * ((math.e**((constants.planck_const * constants.light_speed) /
-                                          (l * constants.boltzmann_const * self.temp))) - 1)
+        numerator = 2 * constants.PLANCK_CONST * (constants.LIGHT_SPEED ** 2)
+        denominator = (l**5) * ((math.e ** ((constants.PLANCK_CONST * constants.LIGHT_SPEED) /
+                                            (l * constants.BOLTZMANN_CONST * self.temp))) - 1)
         return numerator / denominator

@@ -129,7 +129,6 @@ class PlottedPlanckFunction(PlottedFunction):
         @param l: Wavelength of radiation to be analyzed (m).
         @return: Intensity of wavelength emitted by black body.
         """
-        # QUESTION: I'm not sure exactly what number of decimal places constants should be to.
         if not (isinstance(l, float) or isinstance(l, int)):
             raise TypeError("Must provide numerical input to PlottedPlanckFunction")
 

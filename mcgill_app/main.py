@@ -6,7 +6,7 @@ def main():
     """
     Plots graph of black body emission wavelengths against amplitudes, then UBVR magnitudes of a star.
     """
-    graph = graphs.FunctionsGraph(x_label="wavelength / m", y_label="amplitude")
+    graph = graphs.FunctionsGraph(x_label="wavelength / m", y_label="amplitude / W * sr^-1 * m^-3")
     # Temperatures of black bodies (K) mapped to style of lines on graph.
     temps_to_styles_map = {3000.0: "g-",
                            4000.0: "b-",

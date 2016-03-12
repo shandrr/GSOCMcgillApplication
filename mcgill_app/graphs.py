@@ -33,8 +33,6 @@ class FunctionsGraph(object):
         @param label: Name of function that will be put in legend of graph.
         @return: Nothing.
         """
-        if not isinstance(func, PlottedFunction):
-            raise TypeError("Must provide PlottedFunction to FunctionsGraph")
         self.functions.append({"function": func,
                                "style": style,
                                "label": label})
@@ -96,8 +94,6 @@ class PlottedFunction(object):
         @param point_spacing: The distance between x values in range of x values used.
         @return: Two lists, one of all x values and another of respective y values for points on graph.
         """
-        if not len(x_range) == 2:
-            raise ValueError("Range of x values can only contain two values")
         x_values = [x_range[0]]
         x = x_range[0]
         while x < x_range[1]:
@@ -117,9 +113,7 @@ class PlottedPlanckFunction(PlottedFunction):
         @type temperature: float, int
         @param temperature: Temperature of black body, in Kelvin.
         """
-        if not (isinstance(temperature, float) or isinstance(temperature, int)):
-            raise TypeError("Must provide a number for temperature")
-        self.temp = temperature
+        self.temp = float(temperature)
 
     def __call__(self, l):
         """
@@ -129,9 +123,6 @@ class PlottedPlanckFunction(PlottedFunction):
         @param l: Wavelength of radiation to be analyzed (m).
         @return: Intensity of wavelength emitted by black body.
         """
-        if not (isinstance(l, float) or isinstance(l, int)):
-            raise TypeError("Must provide numerical input to PlottedPlanckFunction")
-
         numerator = 2 * constants.PLANCK_CONST * (constants.LIGHT_SPEED ** 2)
         denominator = (l**5) * ((math.e ** ((constants.PLANCK_CONST * constants.LIGHT_SPEED) /
                                             (l * constants.BOLTZMANN_CONST * self.temp))) - 1)

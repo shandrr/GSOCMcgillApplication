@@ -1,9 +1,23 @@
+import math
+
 BOLTZMANN_CONST = 1.38064852e-23   # J / K
 PLANCK_CONST = 6.63607004e-34      # J * s
 LIGHT_SPEED = 299792458            # m / s
 STEFAN_BOLTZMANN_CONST = 5.67e-8   # J
 
-# TODO: get data about Vega
-VEGA_SURFACE_TEMP = 9602    # K
-VEGA_SURFACE_AREA = 1       # m^2
-VEGA_DISTANCE = 1           # pc
+PARSEC = 3.086e16           # m
+SOLAR_RADIUS = 695500e3         # m
+
+VEGA_SURFACE_TEMP = 9602        # K
+VEGA_SURFACE_AREA = 4 * math.pi * (2.818 * SOLAR_RADIUS)**2      # m^2
+VEGA_DISTANCE = 7.58 * PARSEC   # m
+
+U_WAVELENGTH = 0.35e-6          # m
+B_WAVELENGTH = 0.438e-6
+V_WAVELENGTH = 0.5465e-6
+R_WAVELENGTH = 0.6470e-6
+
+VEGA_U_FLUX = 4.172e15
+VEGA_B_FLUX = 3.332e15
+VEGA_V_FLUX = 2.127e15
+VEGA_R_FLUX = 1.426e15

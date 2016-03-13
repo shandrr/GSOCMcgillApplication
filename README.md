@@ -1,6 +1,6 @@
 # Google Summer of Code: Mcgill Application
 
-This is a piece of Python code written for an application with Mcgill.
+This is a simple Python program written for a Google Summer of Code application with Mcgill Space Institute.
 The requirements can be found at http://msi.mcgill.ca/Lightcurve_modeling_with_Icarus.html.
 
 ## License
@@ -23,6 +23,4 @@ in the command prompt. Alternatively, simply run main.py in the mcgill_app direc
 ## Questions about Assignment
 
 * I'm not sure what accuracy constants should be to. I've left most of them to 9 significant figures.
-* I was unsure of how to calculate the star's magnitude without its temperature or using another reference star.
-    * My implementation ended up assuming the star's temperature from an HR diagram and using Vega as a reference, assuming it has a magnitude of 0 and is a black body.
-    * How would this be done in general? I read lecture slides from various astrophysics courses, and cobbled what I found together, but I remain unsure.
+* My results for the star's U, B, V and R magnitudes deviate ever so slightly from the values in the provided app. It may be due to erroneous constant values, but is there a better way to calculate the result?

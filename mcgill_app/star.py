@@ -1,3 +1,10 @@
+"""
+.. module:: star
+   :synopsis: Contains Star class.
+
+.. moduleauthor:: Jack Romo <sharrackor@gmail.com>
+"""
+
 from __future__ import division
 import constants
 import math
@@ -5,15 +12,18 @@ import plotted_functions as pf
 
 
 class Star(object):
+    """
+    Star that can be queried for its magnitude at various wave bands.
+    """
 
     def __init__(self, radius, dist, surface_temp):
         """
-        @type radius: float
-        @param radius: Radius of star in meters.
-        @type dist: float
-        @param dist: Distance of star from observer in meters.
-        @type surface_temp: float
-        @param surface_temp: Surface temperature of star in Kelvin.
+        :type radius: float
+        :param radius: Radius of star in meters.
+        :type dist: float
+        :param dist: Distance of star from observer in meters.
+        :type surface_temp: float
+        :param surface_temp: Surface temperature of star in Kelvin.
         """
         self.radius = radius
         self.dist = dist
@@ -23,25 +33,37 @@ class Star(object):
         """
         Gets absolute magnitude of the star within a certain wavelength.
 
-        @type wavelength: float
-        @param wavelength: Wavelength to get magnitude of star within (m).
-        @type zero_point_flux: float
-        @param zero_point_flux: Flux in wavelength of reference star with zero magnitude (ie. Vega).
-        @rtype: float
-        @return: Magnitude of self.
+        :type wavelength: float
+        :param wavelength: Wavelength to get magnitude of star within (m).
+        :type zero_point_flux: float
+        :param zero_point_flux: Flux in wavelength of reference star with zero magnitude (ie. Vega).
+        :rtype: float
+        :returns: Magnitude of self.
         """
         flux = pf.PlottedPlanckFunction(self.surface_temp)(wavelength)
         # Get ratio of own flux to Vega's flux, ie. a reference point.
         return -2.5 * math.log(flux / zero_point_flux, 10)
 
     def get_u_mag(self):
+        """
+        :returns: U magnitude of star.
+        """
         return self._get_wavelength_magnitude(constants.U_WAVELENGTH, constants.VEGA_U_FLUX)
 
     def get_b_mag(self):
+        """
+        :returns: B magnitude of star.
+        """
         return self._get_wavelength_magnitude(constants.B_WAVELENGTH, constants.VEGA_B_FLUX)
 
     def get_v_mag(self):
+        """
+        :returns: V magnitude of star.
+        """
         return self._get_wavelength_magnitude(constants.V_WAVELENGTH, constants.VEGA_V_FLUX)
 
     def get_r_mag(self):
+        """
+        :returns: R magnitude of star.
+        """
         return self._get_wavelength_magnitude(constants.R_WAVELENGTH, constants.VEGA_R_FLUX)

@@ -1,3 +1,11 @@
+"""
+.. module:: main
+    :synopsis: Plot all required graphs.
+
+.. moduleauthor:: Jack Romo <sharrackor@gmail.com>
+
+"""
+
 import graphs
 import constants
 import plotted_functions as pf
@@ -34,6 +42,9 @@ def plot_ubvr_mags():
 
 
 def main():
+    """
+    Main function of program. Called to execute entire system.
+    """
     plot_blackbody_fluxes()
     plot_ubvr_mags()
 

@@ -1,3 +1,11 @@
+"""
+.. module:: graphs
+    :synopsis: All graph plotting and creation facilities.
+
+.. moduleauthor:: Jack Romo <sharrackor@gmail.com>
+
+"""
+
 from __future__ import division
 import matplotlib.pyplot as plt
 
@@ -9,10 +17,10 @@ class FunctionsGraph(object):
 
     def __init__(self, x_label="", y_label=""):
         """
-        @type x_label: str
-        @param x_label: Label of x axis.
-        @type y_label: str
-        @param y_label: Label of y axis.
+        :type x_label: str
+        :param x_label: Label of x axis.
+        :type y_label: str
+        :param y_label: Label of y axis.
         """
         self.x_label = x_label
         self.y_label = y_label
@@ -22,13 +30,13 @@ class FunctionsGraph(object):
         """
         Append a PlottedFunction to the graph, which will be drawn on the graph when plotted.
 
-        @type func: PlottedFunction
-        @param func: The function to be added to the graph.
-        @type style: str
-        @param style: The styling of the function's line on the graph. Must be in matplotlib style.
-        @type label: str
-        @param label: Name of function that will be put in legend of graph.
-        @return: Nothing.
+        :type func: PlottedFunction
+        :param func: The function to be added to the graph.
+        :type style: str
+        :param style: The styling of the function's line on the graph. Must be in matplotlib style.
+        :type label: str
+        :param label: Name of function that will be put in legend of graph.
+        :returns: Nothing.
         """
         self.functions.append({"function": func,
                                "style": style,
@@ -38,10 +46,11 @@ class FunctionsGraph(object):
         """
         Plots graph of all functions across a specified interval.
 
-        @type x_range: tuple
-        @param x_range: A 2-tuple specifying lowest and highest x values on x-axis.
-        @type point_spacing: float
-        @param point_spacing: The space between x values of each plotted point on the graph.
+        :type x_range: tuple
+        :param x_range: A 2-tuple specifying lowest and highest x values on x-axis.
+        :type point_spacing: float
+        :param point_spacing: The space between x values of each plotted point on the graph.
+        :returns: Nothing.
         """
         for func_map in self.functions:
             function = func_map["function"]

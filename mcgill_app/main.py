@@ -24,10 +24,15 @@ def plot_blackbody_fluxes():
 def display_ubvr_mags():
     """
     Displays U, B, V, and R magnitudes of a star with radius equal to the sun and a distance of 10 parsecs from Earth.
-    Assumes a temperature of 4000K.
+    Shows table for stars with temperatures from 1000K to 10000K.
     """
-    st = star.Star(constants.SOLAR_RADIUS, 10*constants.PARSEC, 6000)
-    print st.get_ubvr_magnitudes()
+    # TODO: replace this with a graph
+    print("Temperature (K)\t| U \t| B \t| V \t| R")
+    print("-"*16 + ("+" + "-"*7)*4)
+    for temperature in range(1000, 11000, 1000):
+        st = star.Star(constants.SOLAR_RADIUS, 10*constants.PARSEC, temperature)
+        u_mag, b_mag, v_mag, r_mag = st.get_ubvr_magnitudes()
+        print("{0}\t\t\t| {1:.2f}\t| {2:.2f}\t| {3:.2f}\t| {4:.2f}".format(temperature, u_mag, b_mag, v_mag, r_mag))
 
 
 def main():

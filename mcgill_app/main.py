@@ -1,6 +1,7 @@
 import graphs
 import star
 import constants
+import plotted_functions as pf
 
 
 def plot_blackbody_fluxes():
@@ -14,7 +15,7 @@ def plot_blackbody_fluxes():
                            4000.0: "b-",
                            5000.0: "r-"}
     for temp, style in temps_to_styles_map.items():
-        planck_function = graphs.PlottedPlanckFunction(temp)
+        planck_function = pf.PlottedPlanckFunction(temp)
         graph.add_plotted_function(planck_function,
                                    style=style,
                                    label=str(int(temp)) + "K")

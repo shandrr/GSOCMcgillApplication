@@ -1,7 +1,7 @@
 from __future__ import division
-import graphs
 import constants
 import math
+import plotted_functions as pf
 
 
 class Star(object):
@@ -30,7 +30,7 @@ class Star(object):
         @rtype: float
         @return: Magnitude of self.
         """
-        flux = graphs.PlottedPlanckFunction(self.surface_temp)(wavelength)
+        flux = pf.PlottedPlanckFunction(self.surface_temp)(wavelength)
         # Get ratio of own flux to Vega's flux, ie. a reference point.
         return -2.5 * math.log(flux / zero_point_flux, 10)
 

@@ -28,4 +28,4 @@ in the command prompt. Alternatively, simply run main.py in the mcgill_app direc
 ## Questions about Assignment
 
 * I'm not sure what accuracy constants should be to. I've left most of them to 9 significant figures.
-* My results for the star's U, B, V and R magnitudes deviate ever so slightly from the values in the provided app. It may be due to erroneous constant values, but is there a better way to calculate the result?
+* My results for the star's U, B, V and R magnitudes deviate by a distance of up to about 0.05 from the values in the provided app. It may be due to erroneous constant values, but is there a better way to calculate the result?

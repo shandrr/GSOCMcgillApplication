@@ -15,15 +15,18 @@ class FunctionsGraph(object):
     A graph that wraps around matplotlib.pyplot for plotting PlottableFunctions.
     """
 
-    def __init__(self, x_label="", y_label=""):
+    def __init__(self, x_label="", y_label="", title=""):
         """
         :type x_label: str
         :param x_label: Label of x axis.
         :type y_label: str
         :param y_label: Label of y axis.
+        :type title: str
+        :param title: Title of graph displayed directly above.
         """
         self.x_label = x_label
         self.y_label = y_label
+        self.title = title
         self.functions = []
 
     def add_plotted_function(self, func, style="g-", label=""):
@@ -59,4 +62,5 @@ class FunctionsGraph(object):
         plt.legend()
         plt.xlabel(self.x_label)
         plt.ylabel(self.y_label)
+        plt.suptitle(self.title, fontsize=12)
         plt.show()

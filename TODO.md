@@ -1,4 +1,4 @@
 # Future features
 
-* Replace documentation with Sphinx
+* Add titles to FunctionsGraphs
 * Combine displayed graphs into one window

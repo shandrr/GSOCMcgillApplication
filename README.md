@@ -3,6 +3,8 @@
 This is a simple Python program written for a Google Summer of Code application with Mcgill Space Institute.
 The requirements can be found at http://msi.mcgill.ca/Lightcurve_modeling_with_Icarus.html.
 
+Those who wish to contribute are asked not to do so, as this is a personal project.
+
 ## License
 
 This software is licensed under the [MIT License (MIT)](LICENSE).

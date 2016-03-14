@@ -1,3 +1,3 @@
 # Future features
 
-* Combine displayed graphs into one window
+* None left, project is considered finished

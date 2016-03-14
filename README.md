@@ -5,6 +5,9 @@ The requirements can be found at http://msi.mcgill.ca/Lightcurve_modeling_with_I
 
 Those who wish to contribute are asked not to do so, as this is a personal project.
 
+It is also requested that those also applying for the same project as the one this software is directed towards would not use the software on this repository.
+(It would make little sense to do so, as the MIT license requires you to provide reference to me if you do use any of this code yourself.)
+
 ## License
 
 This software is licensed under the [MIT License (MIT)](LICENSE).

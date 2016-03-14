@@ -34,14 +34,14 @@ class Star(object):
         # Get ratio of own flux to Vega's flux, ie. a reference point.
         return -2.5 * math.log(flux / zero_point_flux, 10)
 
-    def get_ubvr_magnitudes(self):
-        """
-        Gets magnitude of star in U, B, V, and R wavelengths.
+    def get_u_mag(self):
+        return self._get_wavelength_magnitude(constants.U_WAVELENGTH, constants.VEGA_U_FLUX)
 
-        @return: 4-tuple of U, B, V and R magnitudes in order.
-        """
-        u_mag = self._get_wavelength_magnitude(constants.U_WAVELENGTH, constants.VEGA_U_FLUX)
-        b_mag = self._get_wavelength_magnitude(constants.B_WAVELENGTH, constants.VEGA_B_FLUX)
-        v_mag = self._get_wavelength_magnitude(constants.V_WAVELENGTH, constants.VEGA_V_FLUX)
-        r_mag = self._get_wavelength_magnitude(constants.R_WAVELENGTH, constants.VEGA_R_FLUX)
-        return u_mag, b_mag, v_mag, r_mag
+    def get_b_mag(self):
+        return self._get_wavelength_magnitude(constants.B_WAVELENGTH, constants.VEGA_B_FLUX)
+
+    def get_v_mag(self):
+        return self._get_wavelength_magnitude(constants.V_WAVELENGTH, constants.VEGA_V_FLUX)
+
+    def get_r_mag(self):
+        return self._get_wavelength_magnitude(constants.R_WAVELENGTH, constants.VEGA_R_FLUX)

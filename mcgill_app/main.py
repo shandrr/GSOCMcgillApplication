@@ -1,5 +1,4 @@
 import graphs
-import star
 import constants
 import plotted_functions as pf
 
@@ -22,23 +21,21 @@ def plot_blackbody_fluxes():
     graph.plot(x_range=(0.1e-6, 6e-6), point_spacing=0.02e-6)
 
 
-def display_ubvr_mags():
+def plot_ubvr_mags():
     """
-    Displays U, B, V, and R magnitudes of a star with radius equal to the sun and a distance of 10 parsecs from Earth.
-    Shows table for stars with temperatures from 1000K to 10000K.
+    Plots U, B, V, and R magnitudes of a star against possible temperatures between 1000K and 10_000K.
+    Star has radius equal to the sun and a distance of 10 parsecs from Earth.
     """
-    # TODO: replace this with a graph
-    print("Temperature (K)\t| U \t| B \t| V \t| R")
-    print("-"*16 + ("+" + "-"*7)*4)
-    for temperature in range(1000, 11000, 1000):
-        st = star.Star(constants.SOLAR_RADIUS, 10*constants.PARSEC, temperature)
-        u_mag, b_mag, v_mag, r_mag = st.get_ubvr_magnitudes()
-        print("{0}\t\t\t| {1:.2f}\t| {2:.2f}\t| {3:.2f}\t| {4:.2f}".format(temperature, u_mag, b_mag, v_mag, r_mag))
+    graph = graphs.FunctionsGraph(x_label="Temperature / K", y_label="Magnitude")
+    for wave_band, style in zip(["u", "b", "v", "r"], ["m-", "b-", "k-", "r-"]):
+        mag_func = pf.PlottedMagnitudeFunction(constants.SOLAR_RADIUS, 10 * constants.PARSEC, wave_band)
+        graph.add_plotted_function(mag_func, style=style, label=str(wave_band))
+    graph.plot((1000, 10000), 10)
 
 
 def main():
     plot_blackbody_fluxes()
-    display_ubvr_mags()
+    plot_ubvr_mags()
 
 
 if __name__ == "__main__":

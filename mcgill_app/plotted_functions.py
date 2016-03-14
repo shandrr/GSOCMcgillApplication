@@ -2,6 +2,7 @@ from __future__ import division
 import math
 import abc
 import constants
+import star
 
 
 class PlottedFunction(object):
@@ -75,3 +76,26 @@ class PlottedPlanckFunction(PlottedFunction):
         denominator = (l**5) * ((math.e ** ((constants.PLANCK_CONST * constants.LIGHT_SPEED) /
                                             (l * constants.BOLTZMANN_CONST * self.temp))) - 1)
         return numerator / denominator
+
+
+class PlottedMagnitudeFunction(PlottedFunction):
+
+    __metaclass__ = abc.ABCMeta
+
+    def __init__(self, radius, distance, wave_band="u"):
+        self.radius = radius
+        self.distance = distance
+        self.wave_band = wave_band
+
+    def __call__(self, temperature):
+        st = star.Star(self.radius, self.distance, temperature)
+        if self.wave_band == "u":
+            return st.get_u_mag()
+        elif self.wave_band == "b":
+            return st.get_b_mag()
+        elif self.wave_band == "v":
+            return st.get_v_mag()
+        elif self.wave_band == "r":
+            return st.get_r_mag()
+        else:
+            raise ValueError("Could not identify wave band")

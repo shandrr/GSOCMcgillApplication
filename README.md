@@ -6,7 +6,7 @@ The requirements can be found at http://msi.mcgill.ca/Lightcurve_modeling_with_I
 Those who wish to contribute are asked not to do so, as this is a personal project.
 
 It is also requested that those also applying for the same project as the one this software is directed towards would not use the software on this repository.
-(It would make little sense to do so, as the MIT license requires you to provide reference to me if you do use any of this code yourself.)
+(It would make little sense to do so, as the MIT license would require you to provide reference to me if you did use any of this code yourself.)
 
 ## License
 
@@ -27,17 +27,44 @@ make html
 
 This will build all required files in the subsequent _build directory.
 
-## Execution
+## Installation
 
-To run the program, enter the directory of the README and type
+To install the program, enter the directory of the README and type
+
+```bash
+python setup.py install
+```
+
+in the command prompt. After this, ensure that Python27\Scripts is on your PATH.
+
+From this point on, you will be able to invoke the program with
+
+```bash
+mcgill_app
+```
+
+in the command prompt at any time.
+
+## Execution without installation
+
+If you do not want to install the program, it can be executed in Python directly. First, ensure you have the latest versions of matplotlib and sphinx installed:
+
+```bash
+pip install matplotlib
+pip install sphinx
+```
+
+(The author recommends you have pip installed and on your PATH in all situations.)
+
+After this, enter the directory of the README and type
 
 ```bash
 python ./mcgill_app/main.py
 ```
 
-in the command prompt. Alternatively, simply run main.py in the mcgill_app directory.
+in the command prompt. (Ensure that python is on your PATH before doing this.)
 
 ## Questions about Assignment
 
-* I'm not sure what accuracy constants should be to. I've left most of them to 9 significant figures.
+* I am not sure what accuracy constants should be to; I have left most of them to 9 significant figures. Is this adequate? What is the normal required level of accuracy?
 * My results for the star's U, B, V and R magnitudes deviate by a distance of up to about 0.05 from the values in the provided app. It may be due to erroneous constant values, but is there a better way to calculate the result?

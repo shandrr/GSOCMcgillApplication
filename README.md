@@ -1,6 +1,6 @@
-# Google Summer of Code: Mcgill Application
+# Google Summer of Code: McGill Application
 
-This is a simple Python program written for a Google Summer of Code application with Mcgill Space Institute.
+This is a Python program written for a Google Summer of Code application with McGill Space Institute.
 The requirements can be found at http://msi.mcgill.ca/Lightcurve_modeling_with_Icarus.html.
 
 Those who wish to contribute are asked not to do so, as this is a personal project.

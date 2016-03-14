@@ -79,15 +79,35 @@ class PlottedPlanckFunction(PlottedFunction):
 
 
 class PlottedMagnitudeFunction(PlottedFunction):
+    """
+    Function to plot magnitude of star in specific wave band. Uses UBVR wavebands.
+    """
 
     __metaclass__ = abc.ABCMeta
 
     def __init__(self, radius, distance, wave_band="u"):
+        """
+        @type radius: int, float
+        @param radius: Radius of star in meters.
+        @type distance: int, float
+        @param distance: Distance of star from observer in meters.
+        @type wave_band: str
+        @param wave_band: Wave band (u, v, b or r) to get magnitude within.
+        """
         self.radius = radius
         self.distance = distance
         self.wave_band = wave_band
 
     def __call__(self, temperature):
+        """
+        Get magnitude of star in wave band if star is a specific temperature.
+
+        @type temperature: int, float
+        @param temperature: Temperature of star.
+        @rtype: float
+        @return: Magnitude of star within specified wave band.
+        @raise ValueError: Wave band is not recognized.
+        """
         st = star.Star(self.radius, self.distance, temperature)
         if self.wave_band == "u":
             return st.get_u_mag()

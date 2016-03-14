@@ -54,6 +54,9 @@ class PlottedPlanckFunctionTester(unittest.TestCase):
 
 
 class PlottedMagnitudeFunctionTester(unittest.TestCase):
+    """
+    Data points obtained from astro.unl.edu/classaction/animations/light/bbexplorer.html.
+    """
 
     def setUp(self):
         self.planck_u = PlottedMagnitudeFunction(constants.SOLAR_RADIUS, 10 * constants.PARSEC, wave_band="u")

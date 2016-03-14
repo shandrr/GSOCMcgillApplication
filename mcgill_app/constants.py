@@ -10,7 +10,7 @@ BOLTZMANN_CONST = 1.38064852e-23
 """Boltzmann's Constant (J / K)."""
 PLANCK_CONST = 6.63607004e-34
 """Planck's Constant (Js)."""
-LIGHT_SPEED = 299792458
+LIGHT_SPEED = 2.99792458e8
 """Speed of light (m / s)."""
 STEFAN_BOLTZMANN_CONST = 5.67e-8
 """Stefan-Boltzmann Constant (J)."""

@@ -54,7 +54,7 @@ pip install matplotlib
 pip install sphinx
 ```
 
-(The author recommends you have pip installed and on your PATH in all situations.)
+(You should have pip installed and on your path to do this.)
 
 After this, enter the directory of the README and type
 
@@ -63,8 +63,3 @@ python ./mcgill_app/main.py
 ```
 
 in the command prompt. (Ensure that python is on your PATH before doing this.)
-
-## Questions about Assignment
-
-* I am not sure what accuracy constants should be to; I have left most of them to 9 significant figures. Is this adequate? What is the normal required level of accuracy?
-* My results for the star's U, B, V and R magnitudes deviate by a distance of up to about 0.05 from the values in the provided app. It may be due to erroneous constant values, but is there a better way to calculate the result?

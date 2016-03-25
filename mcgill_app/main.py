@@ -17,7 +17,7 @@ def plot_blackbody_fluxes():
     Plot graph of black body fluxes against wavelength.
     Presents curves of several black bodies, differing in their temperatures
     """
-    graph = graphs.FunctionsGraph(x_label="wavelength / m", y_label="flux / W * sr^-1 * m^-3", title="Black Body Flux")
+    graph = graphs.FunctionsGraph(x_label="wavelength / nm", y_label="flux / W * sr^-1 * m^-3", title="Black Body Flux")
     # Temperatures of black bodies (K) mapped to style of lines on graph.
     temps_to_styles_map = {3000.0: "g-",
                            4000.0: "b-",
@@ -27,7 +27,7 @@ def plot_blackbody_fluxes():
         graph.add_plotted_function(planck_function,
                                    style=style,
                                    label=str(int(temp)) + "K")
-    graph.plot(x_range=(0.1e-6, 6e-6), point_spacing=0.02e-6)
+    graph.plot(x_range=(0.1e-6, 4e-6), point_spacing=0.02e-6, unit_factor_x=10**9)
 
 
 def plot_ubvr_mags():

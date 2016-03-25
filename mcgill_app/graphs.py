@@ -45,7 +45,7 @@ class FunctionsGraph(object):
                                "style": style,
                                "label": label})
 
-    def plot(self, x_range=(0, 10), point_spacing=1.0):
+    def plot(self, x_range=(0, 10), point_spacing=1.0, unit_factor_x=1.0, unit_factor_y=1.0):
         """
         Plots graph of all functions across a specified interval.
 
@@ -53,12 +53,17 @@ class FunctionsGraph(object):
         :param x_range: A 2-tuple specifying lowest and highest x values on x-axis.
         :type point_spacing: float
         :param point_spacing: The space between x values of each plotted point on the graph.
+        :type unit_factor_x: float
+        :param unit_factor_x: Factor to multiply x values by to get into correct units on graph.
+        :type unit_factor_y: float
+        :param unit_factor_y: Factor to multiply x values by to get into correct units on graph.
         :returns: Nothing.
         """
         for func_map in self.functions:
             function = func_map["function"]
             xs, ys = function.get_xy_vals(x_range=x_range, point_spacing=point_spacing)
-            plt.plot(xs, ys, func_map["style"], label=func_map["label"])
+            plt.plot([x * unit_factor_x for x in xs],
+                     [y * unit_factor_y for y in ys], func_map["style"], label=func_map["label"])
         plt.legend()
         plt.xlabel(self.x_label)
         plt.ylabel(self.y_label)

@@ -27,7 +27,7 @@ def plot_blackbody_fluxes():
         graph.add_plotted_function(planck_function,
                                    style=style,
                                    label=str(int(temp)) + "K")
-    graph.plot(x_range=(0.1e-6, 4e-6), point_spacing=0.02e-6, unit_factor_x=10**9)
+    graph.plot(x_range=(0.1e-6, 6e-6), point_spacing=0.02e-6, unit_factor_x=10**9)
 
 
 def plot_ubvr_mags():

@@ -20,7 +20,7 @@ PARSEC = 3.086e16
 SOLAR_RADIUS = 695500e3
 """Radius of the sun (m)."""
 
-U_WAVELENGTH = 0.35e-6              # m
+U_WAVELENGTH = 0.35e-6
 """Wave band length for U filter (m)."""
 B_WAVELENGTH = 0.438e-6
 """Wave band length for V filter (m)."""

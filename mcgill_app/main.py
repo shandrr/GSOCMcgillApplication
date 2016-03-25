@@ -1,6 +1,6 @@
 """
 .. module:: main
-    :synopsis: Plot all required graphs.
+    :synopsis: Plot all required graphs, and prints star magnitudes in additional table.
 
 .. moduleauthor:: Jack Romo <sharrackor@gmail.com>
 
@@ -9,6 +9,7 @@
 import graphs
 import constants
 import plotted_functions as pf
+import star
 
 
 def plot_blackbody_fluxes():
@@ -41,12 +42,29 @@ def plot_ubvr_mags():
     graph.plot((1000, 10000), 10)
 
 
+def print_ubvr_mags():
+    """
+    Prints U, B, V, and R magnitudes of a star against possible temperatures between 1000K and 10_000K.
+    Star has radius equal to the sun and a distance of 10 parsecs from Earth.
+    """
+    print("Temperature (K)\t| U \t| B \t| V \t| R")
+    print("-"*16 + ("+" + "-"*7)*4)
+    for temperature in range(1000, 11000, 1000):
+        st = star.Star(constants.SOLAR_RADIUS, 10*constants.PARSEC, temperature)
+        print("{0}\t\t\t| {1:.1f}\t| {2:.1f}\t| {3:.1f}\t| {4:.1f}".format(temperature,
+                                                                           st.get_u_mag(),
+                                                                           st.get_b_mag(),
+                                                                           st.get_v_mag(),
+                                                                           st.get_r_mag()))
+
+
 def main():
     """
     Main function of program. Called to execute entire system.
     """
     plot_blackbody_fluxes()
     plot_ubvr_mags()
+    print_ubvr_mags()
 
 
 if __name__ == "__main__":

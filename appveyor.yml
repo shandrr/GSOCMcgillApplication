@@ -9,7 +9,11 @@ build_script:
 - python mcgill_app/__init__.py
 - python mcgill_app/constants.py
 - python mcgill_app/graphs.py
-- python mcgill_app/main.py
+#- python mcgill_app/main.py
 - python mcgill_app/plotted_functions.py
 - python mcgill_app/star.py
+test_script:
+- python test/test_graphs.py
+- python test/test_plotted_functions.py
+- python test/test_star.py
 

@@ -6,6 +6,6 @@ install:
 
 
 test_script:
-- mcgill_app/main.py
+- python mcgill_app/main.py
 
 build: off

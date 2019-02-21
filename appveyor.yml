@@ -1,7 +1,8 @@
 image: 
 - Visual Studio 2017
 install:
--pip install setup.py
+-pip install matplotlib
+-pip install sphinx
 
 build_script:
 - python mcgill_app/__init__.py

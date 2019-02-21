@@ -3,7 +3,7 @@ image:
 install:
 -pip install setup.py
 
-test_script:
+build_script:
 - python mcgill_app/__init__.py
 - python mcgill_app/constants.py
 - python mcgill_app/graphs.py
@@ -14,4 +14,4 @@ test_script:
 - python tests/test_graphs.py
 - python tests/test_plotted_functions.py
 - python tests/test_star.py
-build: off
+

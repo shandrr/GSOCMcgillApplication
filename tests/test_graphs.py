@@ -1,5 +1,5 @@
 import unittest
-from GSOCMcgillApplication.mcgill_app.graphs import *
+from mcgill_app.graphs import *
 from mcgill_app.plotted_functions import *
 import mcgill_app.constants as constants
 

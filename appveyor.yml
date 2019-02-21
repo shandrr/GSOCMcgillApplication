@@ -1,10 +1,7 @@
 image: 
 - Visual Studio 2017
 install:
-- pip install --user lxml
-- pip install --user numpy
-- pip install --user matplotlib
-- pip install --user networkx
+- pip install setup.py
 
 test_script:
 - python mcgill_app/__init__.py

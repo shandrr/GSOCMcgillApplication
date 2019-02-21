@@ -1,6 +1,7 @@
 image: 
 - Visual Studio 2017
-
+install:
+-pip install setup.py
 test_script:
 - python mcgill_app/__init__.py
 - python mcgill_app/constants.py

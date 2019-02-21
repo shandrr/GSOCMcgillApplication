@@ -1,0 +1,21 @@
+image: 
+- Visual Studio 2017
+install:
+- pip install --user lxml
+- pip install --user numpy
+- pip install --user matplotlib
+- pip install --user networkx
+
+test_script:
+- python mcgill_app/__init__.py
+- python mcgill_app/constants.py
+- python mcgill_app/graphs.py
+#- python mcgill_app/main.py
+- python mcgill_app/plotted_functions.py
+- python mcgill_app/star.py
+- python tests/__init__.py
+- python tests/test_graphs.py
+- python tests/test_plotted_functions.py
+- python tests/test_star.py
+
+build: off

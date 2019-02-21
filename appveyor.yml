@@ -5,6 +5,7 @@ install:
 -pip install sphinx
 
 build_script:
+
 - python mcgill_app/__init__.py
 - python mcgill_app/constants.py
 - python mcgill_app/graphs.py

@@ -13,7 +13,7 @@ build_script:
 - python mcgill_app/plotted_functions.py
 - python mcgill_app/star.py
 test_script:
-- python test/test_graphs.py
-- python test/test_plotted_functions.py
-- python test/test_star.py
+- python tests/test_graphs.py
+- python tests/test_plotted_functions.py
+- python tests/test_star.py
 

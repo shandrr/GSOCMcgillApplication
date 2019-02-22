@@ -11,7 +11,7 @@ import constants
 import plotted_functions as pf
 import star
 import matplotlib 
-matplotlib.use('Agg')
+matplotlib.use('GTK')
 
 def plot_blackbody_fluxes():
     """

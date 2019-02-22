@@ -8,7 +8,7 @@
 
 from __future__ import division
 import matplotlib.pyplot as plt
-
+matplotlib.use('GTK')
 
 class FunctionsGraph(object):
     """

@@ -5,9 +5,12 @@
 .. moduleauthor:: Jack Romo <sharrackor@gmail.com>
 
 """
-import matplotlib
-matplotlib.use('Agg')
-export DISPLAY=mymachine.com:0.0
+import os
+import matplotlib as mpl
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using non-interactive Agg backend')
+    mpl.use('Agg')
+import matplotlib.pyplot as plt
 import graphs
 import constantsimport plotted_functions as pf
 import star

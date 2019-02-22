@@ -5,12 +5,11 @@
 .. moduleauthor:: Jack Romo <sharrackor@gmail.com>
 
 """
-
-import graphs
-import constants
 import matplotlib
 matplotlib.use('Agg')
-import plotted_functions as pf
+export DISPLAY=mymachine.com:0.0
+import graphs
+import constantsimport plotted_functions as pf
 import star
 
 def plot_blackbody_fluxes():
